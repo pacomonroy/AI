@@ -43,8 +43,13 @@ cancel_conference_node.set_table({
 })
 
 
-print (cancel_conference_node.a_given_b([   {'var': personal_emergency_node.var, 'value': False}     ],
-                                         [   {'var': transportation_problem_node.var, 'value': False}    ]))
+#Probability of cancelling a conference given a transportation problem
+print("\nProbability of cancelling a conference given a transportation problem\n")
+
+print (cancel_conference_node.a_given_b([  {'var': cancel_conference_node.var, 'value': True}    ],
+                                         [   {'var': transportation_problem_node.var, 'value': True} , {'var': personal_emergency_node.var, 'value': False}     ]))
 print("-------------------")
-print (cancel_conference_node.a_given_b([   {'var': personal_emergency_node.var, 'value': True}, {'var': transportation_problem_node.var, 'value': False}     ],
-                                         [   {'var': cancel_conference_node.var, 'value': True}    ]))
+#Probability of cancelling a conference given a personal emergency and a transportation problem
+print("\nProbability of cancelling a conference given a transportation problem and a personal emergency\n")
+print (cancel_conference_node.a_given_b([  {'var': cancel_conference_node.var, 'value': True}    ],
+                                         [   {'var': transportation_problem_node.var, 'value': True} , {'var': personal_emergency_node.var, 'value': True}     ]))
